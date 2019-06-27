@@ -18,6 +18,7 @@ const server = http.createServer((request, response) => {
     const summonerCurGame = query.summonerCurGame;
     const findGame = query.findGame;
     const sumGame = query.sumGame;
+    const oneGame = query.oneGame;
     if(summonerName != null) {
         callAPI(summonerName, response);
     } else if(summonerChamp != null){
@@ -28,7 +29,10 @@ const server = http.createServer((request, response) => {
         callAPI4(findGame, response);
     } else if (sumGame != null) {
         callAPI5(sumGame, response);
+    } else if (oneGame != null) {
+        callAPI6(oneGame, response);
     }
+
     else {
         callAPI("wet dream", response)
     }
@@ -145,4 +149,27 @@ function callAPI5(summonerChamp, response) {
     }).on("error", (err) => {
         console.log("Error: " + err.message);
     });
+}
+
+    function callAPI6(oneGame, response) {
+        const url = 'https://na1.api.riotgames.com/lol/match/v4/matches/'
+            + summonerChamp + '?api_key=' + apiKey;
+
+        https.get(url, (resp) => {
+            let data = '';
+
+            // A chunk of data has been recieved.
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+                response.end(data);
+                // console.log(JSON.parse(data));
+            });
+
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+        });
 }
