@@ -151,7 +151,7 @@ function callAPI5(summonerChamp, response) {
     });
 }
 
-    function callAPI6(oneGame, response) {
+    function callAPI6(summonerChamp, response) {
         const url = 'https://na1.api.riotgames.com/lol/match/v4/matches/'
             + summonerChamp + '?api_key=' + apiKey;
 
