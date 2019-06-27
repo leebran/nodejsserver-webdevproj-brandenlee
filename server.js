@@ -26,7 +26,7 @@ const server = http.createServer((request, response) => {
         callAPI3(summonerCurGame, response);
     } else if (findGame != null) {
         callAPI4(findGame, response);
-    } else if (findGame != null) {
+    } else if (sumGame != null) {
         callAPI5(sumGame, response);
     }
     else {
