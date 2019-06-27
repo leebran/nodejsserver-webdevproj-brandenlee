@@ -125,7 +125,7 @@ function callAPI4(summonerChamp, response) {
     });
 }
 function callAPI5(summonerChamp, response) {
-    const url = '/lol/match/v4/matchlists/by-account/'
+    const url = 'https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/'
         + summonerChamp + '?api_key=' + apiKey;
 
     https.get(url, (resp) => {
