@@ -2,7 +2,7 @@ const https = require('https');
 const http = require('http');
 const url = require('url');
 
-const apiKey = 'RGAPI-3a38ada8-eb7e-4ac1-8d4f-de61604f89aa';
+const apiKey = 'RGAPI-d86e734c-8e85-416d-8f66-16386ca2892b';
 
 const PORT = process.env.PORT || 8080;
 
